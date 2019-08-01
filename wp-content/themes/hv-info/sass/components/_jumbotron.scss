@@ -1,0 +1,74 @@
+
+.Jumbotron {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: top;
+    background-size: cover;
+    min-height: 80vh;
+    h1 {
+        font-size: $xl-font-size;
+        font-weight: bold;
+        margin: 0 15vw;
+    }
+    p {
+        margin: 3rem 0 2rem;
+        font-size: $medium-font-size;
+    }
+    button {
+        padding: 1rem 3rem;
+        font-size: $medium-font-size;
+        text-transform: uppercase;
+        background-color: transparent;
+        outline: none;
+        border: 1px solid white;
+    }
+    button:hover { 
+        background-color: $yellow; 
+        outline: none;
+        border: 1px solid $yellow;
+    }
+    btn:focus {
+        outline: none;
+        border: none;
+    }
+    &.confirming {
+        min-height: 100vh;
+    }
+    &-welcome {
+        min-height: 50vh;
+        background-position: center center;
+
+    }
+}
+.buttonHide {
+    display : none;
+}
+
+// **********************************  MEDIA QUERIES **********************************
+
+@media (max-width: 1548px) {
+    .Jumbotron {
+        h1 {
+            font-size: 50px;
+        }
+    }
+}
+
+@media (max-width: 948px) {
+    .Jumbotron {
+        h1 {
+            font-size: $large-font-size;
+            margin: 0;
+
+        }
+    }
+}
+
+@media (max-width: 578px) {
+    .Jumbotron {
+        padding: 0 5px;
+    }
+}

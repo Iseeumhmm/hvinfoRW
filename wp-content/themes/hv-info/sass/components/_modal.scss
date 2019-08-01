@@ -1,0 +1,26 @@
+.Modal {
+    display: none;
+    position: absolute;
+    top: 50px;
+    min-width: 45rem;
+    z-index: 500;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}
+
+// **********************************  MEDIA QUERIES **********************************
+
+@media (max-width: 948px) {
+    .Modal-profile {
+        min-width: 85vw;
+    }
+}
+
+@media (max-width: 598px) {
+    .Modal-profile {
+        min-width: 98%;
+    }
+}

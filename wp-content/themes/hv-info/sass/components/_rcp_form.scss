@@ -1,0 +1,52 @@
+
+// User Data Form
+
+// Input Container
+.rcp_form fieldset {
+    padding: 0 3rem !important;
+}
+// Radio Buttons Remove float
+.rcp_subscription_level .rcp_level {
+    float: none !important;
+}
+.rcp_form input[type=text], input[type=password], input[type=email] {
+        width: 96%;
+}
+// Asterisk
+.asterisk {
+    color: red;
+}
+// Submit button
+.rcp-form {
+    &_row {
+        padding: 0 4rem;
+    }
+    &_button {
+        color: #5C9111;
+        border: none;
+        font-weight: bold;
+        &--container {
+            text-align: center;
+        }
+    }
+    &-logout {
+        color: red !important;
+        font-size: $medium-font-size;
+        font-weight: bold;
+    }
+}
+
+.rcp_error {
+    margin: 0 12rem !important;
+}
+
+// Field Validation
+
+.rcp_form input[type=email]:invalid{
+    border-color: #900;
+    background-color: #FDD;
+}
+  
+.rcp_form input[type=email]:focus:invalid {
+    outline: none;
+}
