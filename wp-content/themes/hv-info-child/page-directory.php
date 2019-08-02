@@ -48,7 +48,7 @@ get_header(); ?>
 						echo '<div class="col-md-6 col-lg-4 news-item">';
 						echo '<div class="companies-logo--container mb-5 logo-image' . get_the_ID() . '"></div>';
 						echo '<span class="news-heading--text">'. get_the_title() . '</span>';
-						echo '<h1 class="companies-h1">' . get_field( service_type ) . '</h1>';
+						echo '<h1 class="companies-h1">' . get_field( 'service_type' ) . '</h1>';
 						$content = wp_strip_all_tags( get_field( 'description' ) );
 						echo '<p class="news-body companies-body">' . substr( $content, 0, 150) . ' ...</p>';
 						echo '<p class="news-keepreading text-left">Keep reading...</p>';
