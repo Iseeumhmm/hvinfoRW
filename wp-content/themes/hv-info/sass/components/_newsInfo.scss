@@ -1,0 +1,100 @@
+.news {
+        &-item {
+            position: relative;
+            min-height: 20rem;
+            padding: 0 6rem;
+
+        }
+        &-container {
+            width: 100%;
+            display: inline-block;
+            text-align: left;
+            margin: 4rem 0;
+            padding: 0 8rem;
+        }
+        &-header {
+            overflow: visible;
+            white-space: nowrap;
+            padding-bottom: 3rem;
+            padding-left: 4.5vw;
+        }
+        &-heading--text {
+            font-size: $medium-font-size;
+        }
+        &-service_type {
+            text-align: center;
+            font-size: $medium-font-size;
+        }
+        &-body {
+            padding-top: 2rem;
+            font-size: $regular-font-size;
+            font-weight: 300;
+        }
+        &-keepreading {
+            font-size: $regular-font-size;
+            font-weight: 300;
+            color: $grey;
+            padding-top: 3rem;
+            cursor: pointer;
+        }
+        &-keepreading:hover {
+            color: $yellow;
+        }
+        &-line {
+            border-bottom: 3px solid $yellow;
+            width: 9rem;
+            height: 1rem;
+        }
+        &-circle {
+            position: relative;
+            top: .5rem;
+            margin-right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 2rem;
+        }
+        &_single-view {
+            margin-left: 5rem;
+            .news {
+                &-circle {
+                    top: 1rem;
+                }
+                &-body {
+                    padding: 2rem 5rem;
+                }
+                &-doneReading {
+                    text-align: center;
+                }
+            }
+        }
+}
+h2.text-left {
+    font-size: $large-font-size;
+    font-weight: 300;
+}
+
+// **********************************  MEDIA QUERIES **********************************
+
+@media (max-width: 1472px) {
+    .news-container {
+        padding: 0 5px;
+    }
+}
+
+// **********************************  MEDIA QUERIES **********************************
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 948px) {
+   .news-line {
+       width: 5rem;
+   }
+}
+
+@media (max-width: 578px) {
+   .news-item {
+        margin: 2rem 5px;
+   }
+}

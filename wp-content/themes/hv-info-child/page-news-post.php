@@ -23,10 +23,9 @@ get_header(); ?>
 	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-		<div class="Jumbotron">
-			<h1 class="display-3 text-center">Grow your business network with others and share your work</h1>
-			<p class="lead">Help build our community</p>
-			<Button onClick="showRegister();" class="Button">Register Today</Button>
+		<div class="Jumbotron Jumbotron-directory">
+			<h1 class="display-3 text-center">News Post</h1>
+			<!-- <Button onClick="showRegister();" class="Button">Register Today</Button> -->
 			<div class="Modal Modal-register">
 				<?php echo do_shortcode( '[register_form]' ); ?>
 			</div>
@@ -37,32 +36,26 @@ get_header(); ?>
 
 		<div class="news-container">
 			<div class="news-header">
-				<h2 class="text-left">LATEST NEWS & INFO</h2> 
+				<h2 style="text-transform: uppercase;" class="text-left">Create a new post</h2>
 				<div class="news-line"></div>
 			</div>
 			<div class="container-fluid">
-				<div class="row">
-					<?php 
-					$posts = new WP_Query(array('post_type'=>'Post', 'posts_per_page' => -1));
+				<div class="row text-center">
+					<!-- <?php 
+					$posts = new WP_Query(array('post_type'=>'profiles', 'posts_per_page' => -1));
 						if( $posts->have_posts() ) : while( $posts->have_posts() ) : $posts->the_post();
-						$color="#F8BA15";
-						if ( get_field( 'service_type' ) === "Web Design") {
-							$color="#5D4D97";
-						} else if ( get_field( 'service_type' ) === "Electrical") {
-							$color="#89C43F";
-						} else if ( get_field( 'service_type' ) === "HVAC") {
-							$color="#29A9E0";
-						}
+						echo '<style>.logo-image' . get_the_ID() . '{ background-image: url(' . get_field( 'logo' ) . '); background-position: center center; background-size: contain; background-repeat: no-repeat;}</style>';
 						echo '<div class="col-md-6 col-lg-4 news-item">';
-						echo '<div class="news-circle" style="background-color: ' . $color . '; display: inline-block;"></div>';
+						echo '<div class="companies-logo--container mb-5 logo-image' . get_the_ID() . '"></div>';
 						echo '<span class="news-heading--text">'. get_the_title() . '</span>';
-						$content = wp_strip_all_tags( get_the_content() );
-						echo '<p class="news-body">' . substr( $content, 0, 200) . ' ...</p>';
-						echo '<p class="news-keepreading">Keep reading...</p>';
+						echo '<h1 class="companies-h1">' . get_field( service_type ) . '</h1>';
+						$content = wp_strip_all_tags( get_field( 'description' ) );
+						echo '<p class="news-body companies-body">' . substr( $content, 0, 150) . ' ...</p>';
+						echo '<p class="news-keepreading text-left">Keep reading...</p>';
 						echo '</div>';
 						endwhile;  
 					endif;
-					?>
+					?> -->
 				</div>
 			</div>
 		</main><!-- #main -->

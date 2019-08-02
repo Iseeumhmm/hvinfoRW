@@ -25,6 +25,10 @@
         color: #5C9111;
         border: none;
         font-weight: bold;
+        &:hover {
+            background-color: transparent !important;
+            border: 1px solid transparent !important;
+        }
         &--container {
             text-align: center;
         }

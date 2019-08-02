@@ -130,9 +130,14 @@ rcp_show_error_messages( 'register' ); ?>
 	
 	<!-- Current Selection Display -->
 	<!-- <?php do_action( 'rcp_after_register_form_fields', $levels ); ?> -->
-	
+	<?php if( ! is_user_logged_in() ) { ?>
 	<p class="rcp-form_button--container" id="rcp_submit_wrap">
 		<input type="hidden" name="rcp_register_nonce" value="<?php echo wp_create_nonce('rcp-register-nonce' ); ?>"/>
 		<input type="submit"  name="rcp_submit_registration" id="rcp_submit" onClick="checkValidation();" class="rcp-button rcp-form_button" value="<?php esc_attr_e( apply_filters ( 'rcp_registration_register_button', __( 'Register', 'rcp' ) ) ); ?>"/>
 	</p>
+	<?php } else { ?>
+		<div class="cp-form_button--container w-100 text-center">
+			<button class="rcp-button rcp-form_button text-center">Go Back</button>
+		</div>
+	<?php } ?>
 </form>

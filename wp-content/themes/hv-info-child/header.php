@@ -35,11 +35,16 @@
 				<div class="collapse navbar-collapse" id="navbarMenu">
 					<div class="navbar-nav ml-auto navbar-mobile-center">
 						<ul class="navbar-nav ml-auto">
+							<?php if( is_user_logged_in() ) { ?>
+							<li class="nav-item">
+								<a href="<?php echo get_site_url() ?>/news-post" class="nav-link">News Post</a>
+							</li>
+							<?php  } ?>
 							<li class="nav-item">
 								<a href="<?php echo get_site_url() ?>/directory" class="nav-link">Company Directory</a>
 							</li>
 							<li class="nav-item">
-								<a href="<?php echo get_site_url() ?>/register" class="nav-link">Register</a>
+								<a onClick="showRegister();" class="nav-link">Register</a>
 							</li>
 							<li class="nav-item">
 								<a onClick="showLogin();" class="nav-link">Sign In</a>

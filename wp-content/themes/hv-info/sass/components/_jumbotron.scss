@@ -42,6 +42,9 @@
         background-position: center center;
 
     }
+    &-directory {
+        min-height: 30vh;
+    }
 }
 .buttonHide {
     display : none;

@@ -37,7 +37,7 @@ get_header(); ?>
 				if (rcp_user_has_access( $user_id = $user, 2)) {
 					echo '<h1 class="display-3">Thank you for Registering!</h1>';
 					echo '<p class="lead">You can now create a company profile</p>';
-					echo '<Button class="Button">Create profile</Button>';
+					echo '<Button href="<?php echo get_site_url() ?>/profile" class="Button">Create profile</Button>';
 				} else if (rcp_user_has_access( $user_id = $user, 1)) {
 					echo '<h1 class="display-3">Thank you for Registering!</h1>';
 					echo "<p class='lead'>Please check you're inbox to confirm you're email</p>";
