@@ -9,8 +9,20 @@
 .rcp_subscription_level .rcp_level {
     float: none !important;
 }
-.rcp_form input[type=text], input[type=password], input[type=email] {
-        width: 96%;
+.rcp_form input[type=text], input[type=password], input[type=email], textarea {
+     width: 96%;
+}
+
+.rcp_form {
+    &-profile_container {
+        width: 50rem;
+    }
+    &-logo_container-top {
+        padding-top: 1rem;
+    }
+    &-logo_container-bottom {
+        padding-bottom: 1rem;
+    }
 }
 // Asterisk
 .asterisk {

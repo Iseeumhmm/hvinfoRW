@@ -7,6 +7,10 @@ $grey: #808080;
 $green: #8ac43f;
 $blue: #29a9e0;
 
+.color-black {
+    color: $black !important;
+}
+
 //Fonts
 
 $xl-font-size: 60px;
@@ -14,6 +18,9 @@ $large-font-size: 36px;
 $medium-font-size : 24px;
 $regular-font-size: 16px;
 
+.medium-font-size {
+    font-size: $medium-font-size;
+}
 //Mobile 1200px Fonts
 
 $mobile-1200-large-font-size: 3.6rem;

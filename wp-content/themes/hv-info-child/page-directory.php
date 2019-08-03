@@ -53,15 +53,6 @@ get_header(); ?>
 						echo '<p class="news-body companies-body">' . substr( $content, 0, 150) . ' ...</p>';
 						echo '<p class="news-keepreading text-left">Keep reading...</p>';
 						echo '</div>';
-						// <Col key={i} md="4" xl="3" class="news-item">
-						
-						// <div class="companies-logo--container">
-						// 	<img class="companies-logo" src={postLogo} alt="Logo"/>
-						// </div>
-						// <span class="news-heading--text">{post.title.rendered}</span>
-						// <h1 class="companies-h1">{post.acf.service_type}</h1>
-						// <p class="news-body companies-body">{post.content.rendered.substring(0, 150)+ "..."}</p>
-						// <p class="news-keepreading">Keep reading...</p>
 						endwhile;  
 					endif;
 					?>

@@ -10656,6 +10656,14 @@ a.text-dark:focus {
   }
 }
 
+.color-black {
+  color: #1a1a1a !important;
+}
+
+.medium-font-size {
+  font-size: 24px;
+}
+
 *,
 *::after,
 *::before {
@@ -11077,8 +11085,21 @@ h2.text-left {
 
 .rcp_form input[type=text],
 input[type=password],
-input[type=email] {
+input[type=email],
+textarea {
   width: 96%;
+}
+
+.rcp_form-profile_container {
+  width: 50rem;
+}
+
+.rcp_form-logo_container-top {
+  padding-top: 1rem;
+}
+
+.rcp_form-logo_container-bottom {
+  padding-bottom: 1rem;
 }
 
 .asterisk {
