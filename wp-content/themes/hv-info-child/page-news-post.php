@@ -39,7 +39,7 @@ get_header(); ?>
 					<div class="news-line"></div>
 					<div class="pt-5 rcp_form-profile_container">
 
-					<form class="rcp_form" id="featured_upload" method="post" action="#" enctype="multipart/form-data">
+					<form class="rcp_form" id="featured_upload" method="post" action="" enctype="multipart/form-data">
 						<p><label for="title">Title</label><br />
 						<input required type="text" id="title" value="" tabindex="1" size="50" name="title" />
 						</p>
@@ -57,8 +57,8 @@ get_header(); ?>
 						<p><label for="description">Content</label><br />
 						<textarea required id="description" tabindex="3" name="description" cols="50" rows="6"></textarea>
 						</p>
-
-						<?php wp_nonce_field( 'newsfeed_nonce' ); ?>
+						<input type="hidden" name="post_id" id="post_id" value="55" />
+						<?php wp_nonce_field( 'title', 'newsfeed_nonce' ); ?>
 						<p class="rcp-form_button--container text-left">
 						<input class="rcp-form_button medium-font-size" id="submit_newsfeed" name="submit_newsfeed" type="submit" value="Submit" />
 						</p>
@@ -68,13 +68,12 @@ get_header(); ?>
 					<?php
 
 						// Check that the nonce is valid, and the user can edit this post.
-						if ( true
-							// isset( $_POST['newsfeed_nonce'] ) 
-							// && wp_verify_nonce( $_POST['newsfeed_nonce'] )
+						if ( 
+							isset( $_POST['newsfeed_nonce'], $_POST['post_id'] ) 
 						) {
 							// The nonce was valid and the user has the capabilities, it is safe to continue.
-							
-							
+							echo "<script>window.location.replace(\"" . get_site_url() . "/\");</script>";
+
 							// Create post
 							$new_post = array(
 								'post_title'    => $_POST['title'],

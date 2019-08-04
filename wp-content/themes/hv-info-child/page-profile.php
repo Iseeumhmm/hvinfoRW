@@ -39,7 +39,7 @@ get_header(); ?>
 					<div class="news-line"></div>
 					<div class="pt-5 rcp_form-profile_container">
 
-					<form class="rcp_form" id="featured_upload" method="post" action="<?php echo get_site_url() ?>/my-profile" enctype="multipart/form-data">
+					<form class="rcp_form" id="featured_upload" method="post" action="" enctype="multipart/form-data">
 						<p><label for="company_name">Company Name</label><br />
 						<input required type="text" id="company_name" value="" tabindex="1" size="50" name="company_name" />
 						</p>
@@ -93,8 +93,9 @@ get_header(); ?>
 						// Check that the nonce is valid, and the user can edit this post.
 						if ( 
 							isset( $_POST['my_profile_upload_nonce'], $_POST['post_id'] ) 
-							&& wp_verify_nonce( $_POST['my_profile_upload_nonce'], 'my_image_upload' )
+							// && wp_verify_nonce( $_POST['my_profile_upload_nonce'], 'my_image_upload' )
 						) {
+							echo "<script>window.location.replace(\"" . get_site_url() . "/my-profile\");</script>";
 							// The nonce was valid and the user has the capabilities, it is safe to continue.
 							if (isset ($_POST['company_name'])) {
 								$title =  $_POST['company_name'];
@@ -127,14 +128,17 @@ get_header(); ?>
 							update_field('field_5d430d3d40900', $_POST['address'], $pid);
 							update_field('field_5d430d4340901', $_POST['city'], $pid);
 							update_field('field_5d430d6940902', $_POST['province'], $pid);
-							update_field('field_5d430d7d40903', $_POST['company_website'], $pid);
+							update_field('field_5d430d7d40903', $_POST['website'], $pid);
 							update_field('field_5d430d8b40904', $_POST['business_number'], $pid);
 							update_field('field_5d430da15f81b', $_POST['description'], $pid);
 
 							if ( is_wp_error( $attachment_id ) ) {
 								echo "<script>alert('There was an error uploading the Image')</script>";
 							} 
-							 
+						} else {
+							if ( isset( $_POST['my_profile_upload_nonce']) ) {
+								echo "<script>alert('Something went wrong...')</script>";
+							}
 						}
 					?>	
 					</div>
