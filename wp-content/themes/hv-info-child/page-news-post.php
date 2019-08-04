@@ -23,39 +23,73 @@ get_header(); ?>
 	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-		<div class="Jumbotron Jumbotron-directory">
-			<h1 class="display-3 text-center">News Post</h1>
-			<!-- <Button onClick="showRegister();" class="Button">Register Today</Button> -->
-			<div class="Modal Modal-register">
-				<?php echo do_shortcode( '[register_form]' ); ?>
+			<div class="Jumbotron Jumbotron-directory">
+				<h1 class="display-3 text-center">Create a news post</h1>
+				<div class="Modal Modal-register">
+					<?php echo do_shortcode( '[register_form]' ); ?>
+				</div>
+				<div class="Modal Modal-login">
+					<?php echo do_shortcode( '[login_form]' ); ?>
 			</div>
-			<div class="Modal Modal-login">
-				<?php echo do_shortcode( '[login_form]' ); ?>
-		</div>
-		</div>
+			</div>
 
-		<div class="news-container">
-			<div class="news-header">
-				<h2 style="text-transform: uppercase;" class="text-left">Create a new post</h2>
-				<div class="news-line"></div>
-			</div>
-			<div class="container-fluid">
-				<div class="row text-center">
-					<!-- <?php 
-					$posts = new WP_Query(array('post_type'=>'profiles', 'posts_per_page' => -1));
-						if( $posts->have_posts() ) : while( $posts->have_posts() ) : $posts->the_post();
-						echo '<style>.logo-image' . get_the_ID() . '{ background-image: url(' . get_field( 'logo' ) . '); background-position: center center; background-size: contain; background-repeat: no-repeat;}</style>';
-						echo '<div class="col-md-6 col-lg-4 news-item">';
-						echo '<div class="companies-logo--container mb-5 logo-image' . get_the_ID() . '"></div>';
-						echo '<span class="news-heading--text">'. get_the_title() . '</span>';
-						echo '<h1 class="companies-h1">' . get_field( service_type ) . '</h1>';
-						$content = wp_strip_all_tags( get_field( 'description' ) );
-						echo '<p class="news-body companies-body">' . substr( $content, 0, 150) . ' ...</p>';
-						echo '<p class="news-keepreading text-left">Keep reading...</p>';
-						echo '</div>';
-						endwhile;  
-					endif;
-					?> -->
+			<div class="news-container">
+				<div class="news-header">
+					<h2 style="text-transform: uppercase;" class="text-left">New Post</h2>
+					<div class="news-line"></div>
+					<div class="pt-5 rcp_form-profile_container">
+
+					<form class="rcp_form" id="featured_upload" method="post" action="#" enctype="multipart/form-data">
+						<p><label for="title">Title</label><br />
+						<input required type="text" id="title" value="" tabindex="1" size="50" name="title" />
+						</p>
+
+						<p><label for="service_type">Service Type</label><br />
+							<select required id="service_type" name="service_type"">
+								<option value="">--Select One--</option>
+								<option value="Plumbin">Plumbing</option>
+								<option value="Web Design">Web Design</option>
+								<option value="Electrical">Electrical</option>
+								<option value="HVAC">HVAC</option>
+							</select>
+						</p>
+
+						<p><label for="description">Content</label><br />
+						<textarea required id="description" tabindex="3" name="description" cols="50" rows="6"></textarea>
+						</p>
+
+						<?php wp_nonce_field( 'newsfeed_nonce' ); ?>
+						<p class="rcp-form_button--container text-left">
+						<input class="rcp-form_button medium-font-size" id="submit_newsfeed" name="submit_newsfeed" type="submit" value="Submit" />
+						</p>
+						
+					</form>
+
+					<?php
+
+						// Check that the nonce is valid, and the user can edit this post.
+						if ( true
+							// isset( $_POST['newsfeed_nonce'] ) 
+							// && wp_verify_nonce( $_POST['newsfeed_nonce'] )
+						) {
+							// The nonce was valid and the user has the capabilities, it is safe to continue.
+							
+							
+							// Create post
+							$new_post = array(
+								'post_title'    => $_POST['title'],
+								'post_content'  => $_POST['description'],
+								'post_status'   => 'publish',  
+								'post_type' => 'Post'
+							);
+							//save the new post
+							$pid = wp_insert_post($new_post); 
+							
+							// Update ACF fields
+							update_field('field_5d4426112001b', $_POST['service_type'], $pid);
+						}
+					?>	
+					</div>
 				</div>
 			</div>
 		</main><!-- #main -->

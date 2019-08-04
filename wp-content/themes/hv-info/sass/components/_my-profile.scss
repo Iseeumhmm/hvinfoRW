@@ -1,0 +1,7 @@
+.my_profile {
+    &-container {
+        width: 30rem;
+        white-space: pre-wrap;
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+    }
+}

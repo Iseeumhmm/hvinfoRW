@@ -39,6 +39,9 @@
 							<li class="nav-item">
 								<a href="<?php echo get_site_url() ?>/news-post" class="nav-link">News Post</a>
 							</li>
+							<li class="nav-item">
+								<a href="<?php echo get_site_url() ?>/my-profile" class="nav-link">View Profile</a>
+							</li>
 							<?php  } ?>
 							<li class="nav-item">
 								<a href="<?php echo get_site_url() ?>/directory" class="nav-link">Company Directory</a>

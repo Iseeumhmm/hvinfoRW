@@ -10701,6 +10701,18 @@ p {
   padding-right: 0 !important;
 }
 
+input {
+  -webkit-appearance: none !important;
+}
+
+button:focus {
+  outline: 0;
+}
+
+li:focus {
+  outline: 0;
+}
+
 h1 {
   font-weight: 400;
   color: #f8ba14;
@@ -10868,6 +10880,13 @@ p.news-body.companies-body {
   .Jumbotron {
     padding: 0 5px;
   }
+}
+
+.my_profile-container {
+  width: 30rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
 }
 
 .nav-link,
