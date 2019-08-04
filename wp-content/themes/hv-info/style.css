@@ -10701,10 +10701,6 @@ p {
   padding-right: 0 !important;
 }
 
-input {
-  -webkit-appearance: none !important;
-}
-
 button:focus {
   outline: 0;
 }
