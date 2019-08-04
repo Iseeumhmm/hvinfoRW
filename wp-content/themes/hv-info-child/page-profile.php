@@ -39,7 +39,7 @@ get_header(); ?>
 					<div class="news-line"></div>
 					<div class="pt-5 rcp_form-profile_container">
 
-					<form class="rcp_form" id="featured_upload" method="post" action="#" enctype="multipart/form-data">
+					<form class="rcp_form" id="featured_upload" method="post" action="<?php echo get_site_url() ?>/my-profile" enctype="multipart/form-data">
 						<p><label for="company_name">Company Name</label><br />
 						<input required type="text" id="company_name" value="" tabindex="1" size="50" name="company_name" />
 						</p>
@@ -49,7 +49,13 @@ get_header(); ?>
 						<input type="hidden" name="post_id" id="post_id" value="55" />
 
 						<p><label for="service_type">Service Type</label><br />
-						<input required type="text" id="service_type" value="" tabindex="1" size="50" name="service_type" />
+							<select required id="service_type" name="service_type"">
+								<option value="">--Select One--</option>
+								<option value="Plumbin">Plumbing</option>
+								<option value="Web Design">Web Design</option>
+								<option value="Electrical">Electrical</option>
+								<option value="HVAC">HVAC</option>
+							</select>
 						</p>
 
 						<p><label for="address">Address</label><br />
@@ -88,7 +94,6 @@ get_header(); ?>
 						if ( 
 							isset( $_POST['my_profile_upload_nonce'], $_POST['post_id'] ) 
 							&& wp_verify_nonce( $_POST['my_profile_upload_nonce'], 'my_image_upload' )
-							&& current_user_can( 'edit_post', $_POST['post_id'] )
 						) {
 							// The nonce was valid and the user has the capabilities, it is safe to continue.
 							if (isset ($_POST['company_name'])) {
@@ -129,7 +134,7 @@ get_header(); ?>
 							if ( is_wp_error( $attachment_id ) ) {
 								echo "<script>alert('There was an error uploading the Image')</script>";
 							} 
-
+							 
 						}
 					?>	
 					</div>
