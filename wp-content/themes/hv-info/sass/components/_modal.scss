@@ -23,4 +23,9 @@
     .Modal-profile {
         min-width: 98%;
     }
+    .Modal-register, .Modal-login {
+        min-width: unset !important;
+        width: 95%;
+        
+    }
 }

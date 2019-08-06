@@ -11134,6 +11134,12 @@ h2.text-left {
   .Modal-profile {
     min-width: 98%;
   }
+
+  .Modal-register,
+  .Modal-login {
+    min-width: unset !important;
+    width: 95%;
+  }
 }
 
 .rcp_form fieldset {

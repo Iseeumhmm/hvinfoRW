@@ -26,7 +26,7 @@
 		<div class="nav-container">
 			<nav class="navbar navbar-expand-xl navbar-dark">
 				<div class="logo">
-				<a href="<?php echo get_site_url() ?>/"><img class="logo-image" src="<?php echo get_template_directory_uri()?>/images/logo.jpg" alt="Logo"></a>
+				<a href="<?php echo get_site_url() ?>/"><img class="logo-image" src="<?php echo get_template_directory_uri()?>/images/logo.png" alt="Logo"></a>
 				</div>
 				<button class="navbar-toggler mr-md-7" data-toggle="collapse" data-target="#navbarMenu">
 					<span class="navbar-toggler-icon"></span>
