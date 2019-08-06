@@ -10888,7 +10888,8 @@ p.news-body.companies-body {
 }
 
 @media (max-width: 450px) {
-  .Jumbotron h1 {
+  .Jumbotron h1,
+  .Jumbotron button {
     position: relative;
     top: 3rem;
   }

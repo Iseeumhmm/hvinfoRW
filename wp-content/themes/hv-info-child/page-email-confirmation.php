@@ -33,7 +33,7 @@ get_header(); ?>
 			</div>
 			<h1 class="display-3 text-center">Your email is confirmed</h1>
 			<?php if( !is_user_logged_in() ) { ?>
-				<Button onclick='showLogin();' class="Button">Login</Button>
+				<Button onclick='showLogin();' class="Button email_confirmation">Login</Button>
 			<?php  } ?>
 		</div>
 		
