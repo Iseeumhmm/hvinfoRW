@@ -52,7 +52,7 @@ rcp_show_error_messages( 'register' ); ?>
 			
 		<?php endif; ?>
 		<ul id="rcp_subscription_levels">
-			<div class="container">
+			<div class="container rcp-form_container">
 				<div class="row rcp-form_row">
 					<?php 
 						$justification="text-left";
@@ -60,7 +60,7 @@ rcp_show_error_messages( 'register' ); ?>
 						<?php if( rcp_show_subscription_level( $level->id ) ) :
 							$has_trial = $rcp_levels_db->has_trial( $level->id );
 						?>
-						<div class="col-6 <?php echo $justification; ?>">
+						<div class="col-md-6 radio-buttons <?php echo $justification; ?>">
 							<li class="rcp_subscription_level rcp_subscription_level_<?php echo $level->id; ?>">
 								<input type="radio" id="rcp_subscription_level_<?php echo $level->id; ?>" class="required rcp_level" <?php if ( $i == 0 || ( isset( $_GET['level'] ) && $_GET['level'] == $level->id ) ) { echo 'checked="checked"'; } ?> name="rcp_level" rel="<?php echo esc_attr( $level->price ); ?>" value="<?php echo esc_attr( absint( $level->id ) ); ?>" <?php if( $level->duration == 0 ) { echo 'data-duration="forever"'; } if ( ! empty( $has_trial ) ) { echo 'data-has-trial="true"'; } ?>/>
 								<label for="rcp_subscription_level_<?php echo $level->id; ?>">

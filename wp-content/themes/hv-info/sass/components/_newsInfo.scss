@@ -2,21 +2,21 @@
         &-item {
             position: relative;
             min-height: 20rem;
-            padding: 0 6rem;
+            padding: 0 4rem 12rem;
 
         }
         &-container {
             width: 100%;
             display: inline-block;
             text-align: left;
-            margin: 4rem 0;
-            padding: 0 8rem;
+            margin: 5rem 0;
+            padding: 0 14.5rem;
         }
         &-header {
             overflow: visible;
             white-space: nowrap;
-            padding-bottom: 3rem;
-            padding-left: 4.5vw;
+            padding-bottom: 4rem;
+            padding-left: 3vw;
         }
         &-heading--text {
             font-size: $medium-font-size;
@@ -75,16 +75,28 @@ h2.text-left {
 
 // **********************************  MEDIA QUERIES **********************************
 
-@media (max-width: 1472px) {
-    .news-container {
-        padding: 0 5px;
+@media (max-width: 1640px) {
+    .news {
+        &-item {
+            padding: 0 2rem 12rem;
+        }
     }
 }
 
-// **********************************  MEDIA QUERIES **********************************
+@media (max-width: 1450px) {
+    .news {
+        &-container {
+            padding: 0;
+        }
+    }
+}
 
-@media (max-width: 1200px) {
-    
+@media (max-width: 1240px) {
+    .news {
+        &-container {
+            padding: 0 2rem;
+        }
+    }
 }
 
 @media (max-width: 948px) {
@@ -96,5 +108,15 @@ h2.text-left {
 @media (max-width: 578px) {
    .news-item {
         margin: 2rem 5px;
+        padding: 0;
    }
+   .news {
+    &-container {
+        padding: 0;
+        margin: 2rem 0;
+    }
+    &-row {
+        padding: 2rem;
+    }
+}
 }

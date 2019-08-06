@@ -26,7 +26,20 @@ get_header(); ?>
 		<div class="Jumbotron">
 			<h1 class="display-3 text-center">Grow your business network with others and share your work</h1>
 			<p class="lead">Help build our community</p>
-			<Button onClick="showRegister();" class="Button">Register Today</Button>
+			<?php 
+				$user = get_current_user_id();
+				echo $user;
+				if (rcp_user_has_access( $user_id = $user, 2)) {
+					?> <Button onclick='location.href="<?php echo get_site_url() ?>/profile;"' class="Button">Create Profile</Button>';
+					<?php
+				} else if (rcp_user_has_access( $user_id = $user, 1)) {
+					?> <Button onclick='location.href="<?php echo get_site_url() ?>/directory;"' class="Button">Company Directory</Button>';
+					<?php
+				} else {
+					echo '<Button onClick="showRegister();" class="Button">Register Today</Button>';
+				}
+			?>
+			<!-- <Button onClick="showRegister();" class="Button">Register Today</Button> -->
 			<div class="Modal Modal-register">
 				<?php echo do_shortcode( '[register_form]' ); ?>
 			</div>
@@ -41,7 +54,7 @@ get_header(); ?>
 				<div class="news-line"></div>
 			</div>
 			<div class="container-fluid">
-				<div class="row">
+				<div class="row news-row">
 					<?php 
 					$posts = new WP_Query(array('post_type'=>'Post', 'posts_per_page' => -1));
 						if( $posts->have_posts() ) : while( $posts->have_posts() ) : $posts->the_post();
@@ -57,7 +70,7 @@ get_header(); ?>
 						echo '<div class="news-circle" style="background-color: ' . $color . '; display: inline-block;"></div>';
 						echo '<span class="news-heading--text">'. get_the_title() . '</span>';
 						$content = wp_strip_all_tags( get_the_content() );
-						echo '<p class="news-body">' . substr( $content, 0, 200) . ' ...</p>';
+						echo '<p class="news-body">' . substr( $content, 0, 185) . ' ...</p>';
 						echo '<p class="news-keepreading">Keep reading...</p>';
 						echo '</div>';
 						endwhile;  

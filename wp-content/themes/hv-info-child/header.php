@@ -29,8 +29,7 @@
 				<a href="<?php echo get_site_url() ?>/"><img class="logo-image" src="<?php echo get_template_directory_uri()?>/images/logo.jpg" alt="Logo"></a>
 				</div>
 				<button class="navbar-toggler mr-md-7" data-toggle="collapse" data-target="#navbarMenu">
-					<!-- <span class="navbar-toggler-icon"></span> -->
-					<span class="navbar-menu-text">Menu</span>
+					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarMenu">
 					<div class="navbar-nav ml-auto navbar-mobile-center">

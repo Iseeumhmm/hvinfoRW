@@ -5,3 +5,12 @@
         word-wrap: break-word; /* Internet Explorer 5.5+ */
     }
 }
+
+@media (max-width: 525px) {
+    .my_profile {
+        &-container {
+            width: 100%;
+            
+        }
+    }
+}

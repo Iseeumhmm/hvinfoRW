@@ -36,6 +36,7 @@
     &_button {
         color: #5C9111;
         border: none;
+        background: transparent;
         font-weight: bold;
         &:hover {
             background-color: transparent !important;
@@ -65,4 +66,36 @@
   
 .rcp_form input[type=email]:focus:invalid {
     outline: none;
+}
+
+@media (max-width: 885px) {
+    .rcp_form {
+        &-profile_container {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .Modal {
+        min-width: 95%;
+    }
+    .rcp_form fieldset {
+        padding: 0 !important;
+    }
+    .radio-buttons {
+        text-align: left !important;
+    }
+    .container {
+        min-width: 100% !important;
+    }
+    .rcp-form_row {
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .rcp_form input[type=text], input[type=password], input[type=email], textarea {
+        width: 93%;
+   }
 }
