@@ -10682,6 +10682,11 @@ html {
   font-size: 0.625;
 }
 
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
 a,
 a:link,
 a:visited {
@@ -10908,12 +10913,17 @@ p.news-body.companies-body {
   color: #ffffff !important;
 }
 
+.logo {
+  z-index: 500;
+}
+
 .nav-container {
   position: absolute;
   width: 100%;
 }
 
 .nav-container nav {
+  z-index: 1000;
   color: #FFFFFF;
   font-weight: 300;
   font-size: 18px;
@@ -11116,7 +11126,7 @@ h2.text-left {
   position: absolute;
   top: 50px;
   min-width: 45rem;
-  z-index: 500;
+  z-index: 2000;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 0.5rem;

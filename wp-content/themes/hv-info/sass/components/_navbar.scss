@@ -18,12 +18,15 @@
     // }
     // img { height: 3rem; }
 //}
-
+.logo {
+    z-index: 500;
+}
 
 .nav-container {
     position: absolute;
     width: 100%;
     nav {
+        z-index: 1000;
         color: #FFFFFF;
         font-weight: 300;
         font-size: 18px;

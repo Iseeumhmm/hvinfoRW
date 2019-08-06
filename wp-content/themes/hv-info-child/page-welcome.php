@@ -35,13 +35,13 @@ get_header(); ?>
 				$user = get_current_user_id();
 				echo $user;
 				if (rcp_user_has_access( $user_id = $user, 2)) {
-					echo '<h1 class="display-3">Thank you for Registering!</h1>';
-					echo '<p class="lead">You can now create a company profile</p>';
+					echo '<h1 class="display-3 text-center">Thank you for Registering!</h1>';
+					echo '<p class="lead text-center">You can now create a company profile</p>';
 					?> <Button onclick='location.href="<?php echo get_site_url() ?>/profile;"' class="Button">Create Profile</Button>';
 					<?php
 				} else if (rcp_user_has_access( $user_id = $user, 1)) {
-					echo '<h1 class="display-3">Thank you for Registering!</h1>';
-					echo "<p class='lead'>Please check you're inbox to confirm you're email</p>";
+					echo '<h1 class="display-3 text-center">Thank you for Registering!</h1>';
+					echo "<p class='lead text-center'>Please check you're inbox to confirm you're email</p>";
 					?> <Button onclick='location.href="<?php echo get_site_url() ?>/profile;"' class="Button">Company Directory</Button>';
 					<?php
 				} else {
