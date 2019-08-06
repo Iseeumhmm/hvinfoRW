@@ -24,6 +24,9 @@
         padding-bottom: 1rem;
     }
 }
+
+
+
 // Asterisk
 .asterisk {
     color: red;
@@ -81,7 +84,7 @@
         min-width: 95%;
     }
     .rcp_form fieldset {
-        padding: 0 !important;
+        padding: 0 1rem !important;
     }
     .radio-buttons {
         text-align: left !important;
@@ -96,6 +99,6 @@
 
 @media (max-width: 620px) {
     .rcp_form input[type=text], input[type=password], input[type=email], textarea {
-        width: 93%;
+        width: 90%;
    }
 }

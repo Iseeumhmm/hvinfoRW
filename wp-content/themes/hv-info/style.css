@@ -11234,7 +11234,7 @@ textarea {
   }
 
   .rcp_form fieldset {
-    padding: 0 !important;
+    padding: 0 1rem !important;
   }
 
   .radio-buttons {
@@ -11255,7 +11255,7 @@ textarea {
   input[type=password],
   input[type=email],
   textarea {
-    width: 93%;
+    width: 90%;
   }
 }
 
