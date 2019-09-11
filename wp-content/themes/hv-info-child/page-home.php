@@ -67,11 +67,13 @@ get_header(); ?>
 							$color="#29A9E0";
 						}
 						echo '<div class="col-md-6 col-lg-4 news-item">';
+						echo '<a href="' . get_permalink() . '">';
 						echo '<div class="news-circle" style="background-color: ' . $color . '; display: inline-block;"></div>';
 						echo '<span class="news-heading--text">'. get_the_title() . '</span>';
 						$content = wp_strip_all_tags( get_the_content() );
 						echo '<p class="news-body">' . substr( $content, 0, 185) . ' ...</p>';
 						echo '<p class="news-keepreading">Keep reading...</p>';
+						echo '</a>';
 						echo '</div>';
 						endwhile;  
 					endif;
